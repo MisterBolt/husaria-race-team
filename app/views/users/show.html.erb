@@ -1,4 +1,12 @@
 <% provide(:title, 'User profile') %>
-<%= @user.name %>
-<%= @user.email %>
-<%= Time.now %>
+<div class="row">
+  <aside class="col-md-6">
+    <section class="user_info">
+      <h1>
+        <%= @user.name %>
+        <%= @user.email %>
+        <%= Time.now %>
+      </h1>
+    </section>
+  </aside>
+</div>

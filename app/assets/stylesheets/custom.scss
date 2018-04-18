@@ -21,14 +21,6 @@ textarea {
   }
 }
 
-.parent {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-
-
 
 
 /* typography */
@@ -78,26 +70,55 @@ footer {
   padding-top: 5px;
   border-top: 1px solid #eaeaea;
   color: #777;
+
+  a {
+    color: #555;
+    &:hover {
+      color: #222;
+    }
+  }
+
+  small {
+    float: left;
+  }
+
+  ul {
+    float: right;
+    list-style: none;
+
+    li {
+      float: left;
+      margin-left: 15px;
+    }
+  }
 }
 
-footer a {
-  color: #555;
+
+
+
+/* forms */
+
+input, textarea, select, .uneditable-input {
+  border: 1px solid #bbb;
+  width: 100%;
+  margin-bottom: 15px;
 }
 
-footer a:hover {
-  color: #222;
+input {
+  height: auto !important;
 }
 
-footer small {
-  float: left;
+#error_explanation {
+  color: red;
+  ul {
+    color: red;
+    margin: 0 0 30px 0;
+  }
 }
 
-footer ul {
-  float: right;
-  list-style: none;
-}
-
-footer ul li {
-  float: left;
-  margin-left: 15px;
+.field_with_errors {
+  @extend .has-error;
+  .form-control {
+    color: red;
+  }
 }
