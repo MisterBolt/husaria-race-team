@@ -190,7 +190,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   duktape
   jbuilder (~> 2.5)
-  jquery-rails (~> 4.3, >= 4.3.3)
+  jquery-rails
   minitest-reporters (= 1.1.14)
   mysql2 (>= 0.4.4, < 0.6.0)
   pg (~> 1.0)
