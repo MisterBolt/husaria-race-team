@@ -5,6 +5,8 @@ ruby '2.5.1'
 
 gem 'bootstrap-sass', '3.3.7'
 gem 'jquery-rails'
+gem 'will_paginate', '~> 3.1', '>= 3.1.6'
+gem 'bootstrap-will_paginate', '~> 1.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.0'
@@ -46,6 +48,7 @@ end
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'web-console', '>= 3.3.0'
+  gem 'faker', '~> 1.8', '>= 1.8.7'
 end
 
 group :test do
