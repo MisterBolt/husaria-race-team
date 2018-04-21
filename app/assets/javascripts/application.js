@@ -15,4 +15,20 @@
 //= require turbolinks
 //= require jquery
 //= require bootstrap
+//= require moment
+//= require bootstrap-datetimepicker
+//= require bootstrap-switch
 //= require_tree .
+
+
+$(function () {
+    $('#datetimepicker').datetimepicker({
+        viewMode: 'years',
+        format: 'DD.MM.YYYY'
+    });
+
+    $('#datetimepicker2').datetimepicker({
+        viewMode: 'years',
+        format: 'DD.MM.YYYY'
+    });
+});
