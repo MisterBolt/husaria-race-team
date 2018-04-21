@@ -1,10 +1,24 @@
 <% provide(:title, 'Members') %>
 <h1>All members</h1>
 
-<%= will_paginate %>
+<div class="container">
+  <div class="col-md-6 col-md-offset-3">
+    <%= will_paginate class: 'center' %>
 
-<ul class="users">
-  <%= render @users %>
-</ul>
+    <table class="table users">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Name</th>
+          <th scope="col">Delete</th>
+        </tr>
+      </thead>
 
-<%= will_paginate %>
+      <tbody>
+          <%= render @users %>
+      </tbody>
+    </table>
+
+    <%= will_paginate class: 'center' %>
+  </div>
+</div>

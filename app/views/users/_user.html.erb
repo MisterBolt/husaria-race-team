@@ -1,8 +1,11 @@
-<li>
-  <%= link_to user.name, user %>
-
-  <% if current_user.admin? && !current_user?(user) %>
-    | <%= link_to 'delete', user, method: :delete,
-                                  data: { confirm: "Are you sure?" } %>
-  <% end %>
-</li>
+<tr>
+  <td>1</td>
+  <td><%= link_to user.name, user %></td>
+  <td> <% if current_user.admin? && !current_user?(user) %>
+          <%= link_to user, method: :delete,
+                         data: { confirm: "Are you sure?" } do %>
+            <span class="glyphicon glyphicon-trash delete-link"></span>
+          <% end %>
+    <% end %>
+    </td>
+</tr>

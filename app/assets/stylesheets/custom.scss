@@ -1,3 +1,22 @@
+$custom-red-color: #c9302c;
+
+$btn-primary-bg: black;
+$nav-link-hover-bg: $custom-red-color;
+
+/* pagination*/
+$pagination-color: $custom-red-color;
+$pagination-bg: black;
+$pagination-border: $custom-red-color;
+$pagination-active-color: black;
+$pagination-active-bg: $custom-red-color;
+$pagination-active-border: $custom-red-color;
+$pagination-disabled-color: black;
+$pagination-disabled-bg: $custom-red-color;
+$pagination-disabled-border: $custom-red-color;
+$pagination-hover-color: black;
+$pagination-hover-bg: $custom-red-color;
+$pagination-hover-border: $custom-red-color;
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
@@ -98,6 +117,22 @@ footer {
 
 /* forms */
 
+.btn-danger {
+  background-color: $custom-red-color;
+
+  &:hover {
+    background-color: black;
+  }
+}
+
+label, .custom-red-color {
+  color: $custom-red-color;
+
+  &:hover {
+    color: $custom-red-color;
+  }
+}
+
 input, textarea, select, .uneditable-input {
   border: 1px solid #bbb;
   width: 100%;
@@ -135,4 +170,39 @@ input {
 #session_remember_me {
   width: auto;
   margin-left: 0;
+}
+
+
+
+
+/* tables */
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  color: white;
+}
+
+tr:nth-child(even) {
+  background-color: white;
+  color: black;
+
+  a {
+    color: black;
+  }
+}
+
+tr:nth-child(odd) {
+  a {
+    color: white;
+
+  }
+}
+
+th {
+  height: 45px;
+}
+
+th, td {
+  border-bottom-width: 0px;
 }
