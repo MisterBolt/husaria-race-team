@@ -1,7 +1,6 @@
 $custom-red-color: #c9302c;
 
 $btn-primary-bg: black;
-$nav-link-hover-bg: $custom-red-color;
 
 /* pagination*/
 $pagination-color: $custom-red-color;
@@ -181,6 +180,28 @@ table {
   border-collapse: collapse;
   width: 100%;
   color: white;
+
+  tbody {
+    tr {
+      .btn-name {
+        width: 440px;
+        text-align: left;
+      }
+
+      .btn-delete {
+        width: 50px;
+      }
+
+      &:hover {
+        background-color: $custom-red-color;
+        color: black;
+
+        a {
+          color: black;
+        }
+      }
+    }
+  }
 }
 
 tr:nth-child(even) {
@@ -189,6 +210,10 @@ tr:nth-child(even) {
 
   a {
     color: black;
+
+    &:hover {
+      color: white;
+    }
   }
 }
 
@@ -196,13 +221,13 @@ tr:nth-child(odd) {
   a {
     color: white;
 
+    &:hover {
+      text-decoration: none;
+      color: white;
+    }
   }
 }
 
 th {
   height: 45px;
-}
-
-th, td {
-  border-bottom-width: 0px;
 }
