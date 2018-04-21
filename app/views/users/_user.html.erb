@@ -1,5 +1,6 @@
 <tr>
-  <td><%= link_to user.name, user, class: 'btn btn-name' %></td>
+  <td><%= link_to global_counter_add, user, class: 'btn btn-name' %></td>
+  <td><%= link_to (user.surname + " " + user.name), user, class: 'btn btn-name' %></td>
   <td>
     <% if current_user.admin? && !current_user?(user) %>
       <%= link_to user, method: :delete,

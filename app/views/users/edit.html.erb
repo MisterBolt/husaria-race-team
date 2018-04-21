@@ -10,13 +10,20 @@
       <%= f.text_field :name, class: 'form-control', readonly: true unless current_user.admin? %>
       <%= f.text_field :name, class: 'form-control' if current_user.admin? %>
 
+      <%= f.label :surname %>
+      <%= f.text_field :surname, class: 'form-control', readonly: true unless current_user.admin? %>
+      <%= f.text_field :surname, class: 'form-control' if current_user.admin? %>
+
       <%= f.label :email %>
       <%= f.email_field :email, class: 'form-control' %>
+
+      <%= f.label :sex %>
+      <%= f.select :sex, [['Male', 'M'], ['Female', 'F']], {}, class: 'form-control' %>
 
       <%= f.label :password, "New password" %>
       <%= f.password_field :password, class: 'form-control' %>
 
-      <%= f.label :password_confirmation, "New password confirmation" %>
+      <%= f.label :password_confirmation %>
       <%= f.password_field :password_confirmation, class: 'form-control' %>
 
       <%= f.submit "Edit", class: 'btn btn-danger' %>

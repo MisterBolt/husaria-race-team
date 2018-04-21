@@ -5,19 +5,25 @@
 # below each fixture, per the syntax in the comments below
 #
 karol:
-  name: Karol Example
+  name: Karol
+  surname: Example
   email: karol@example.com
+  sex: M
   password_digest: <%= User.digest('password') %>
   admin: true
 
 bartek:
-  name: Bartek Example
+  name: Bartek
+  surname: Example
   email: Bartek@example.pl
+  sex: M
   password_digest: <%= User.digest('password') %>
 
 <% 30.times do |n| %>
 user_<%= n %>:
   name:  <%= "User #{n}" %>
+  surname: <%= "Surname #{n}" %>
   email: <%= "user-#{n}@example.pl" %>
+  sex: K
   password_digest: <%= User.digest('password') %>
 <% end %>

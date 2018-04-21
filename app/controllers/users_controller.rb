@@ -8,7 +8,7 @@ class UsersController < ApplicationController
   end
 
   def index
-    @users = User.order(:name).paginate(page: params[:page], per_page: 20)
+    @users = User.order(:surname).paginate(page: params[:page], per_page: 20)
   end
 
   def show
@@ -35,7 +35,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     if @user.update_attributes(user_params)
       flash[:success] = "Profile updated"
-      redirect_to edit_user_path(current_user)
+      redirect_to edit_user_path(@user)
     else
       render 'edit'
     end
@@ -50,7 +50,7 @@ class UsersController < ApplicationController
   private
 
     def user_params
-      params.require(:user).permit(:name, :email, :password,
+      params.require(:user).permit(:name,:surname, :email, :sex, :password,
                                    :password_confirmation)
     end
 

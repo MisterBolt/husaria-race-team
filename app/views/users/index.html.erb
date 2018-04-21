@@ -1,19 +1,13 @@
 <% provide(:title, 'Members') %>
 <h1>All members</h1>
 
-<div class="container">
+<div class="container-fluid">
   <div class="col-md-6 col-md-offset-3">
     <%= will_paginate class: 'center' %>
 
     <table class="table users">
-      <thead>
-        <tr>
-          <th scope="col">Name</th>
-          <th scope="col">Delete</th>
-        </tr>
-      </thead>
-
       <tbody>
+          <% global_counter_assign(params[:page].to_i * 20 - 20) %>
           <%= render @users %>
       </tbody>
     </table>

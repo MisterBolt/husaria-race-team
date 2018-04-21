@@ -184,12 +184,12 @@ table {
   tbody {
     tr {
       .btn-name {
-        width: 440px;
+        width: 100%;
         text-align: left;
       }
 
       .btn-delete {
-        width: 50px;
+        width: 100%;
       }
 
       &:hover {
@@ -226,8 +226,4 @@ tr:nth-child(odd) {
       color: white;
     }
   }
-}
-
-th {
-  height: 45px;
 }

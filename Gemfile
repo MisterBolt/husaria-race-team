@@ -63,6 +63,7 @@ group :test do
 end
 
 group :production do
+  gem 'faker', '~> 1.8', '>= 1.8.7'
   gem 'therubyracer'
   gem 'pg', '~> 1.0'
 end
