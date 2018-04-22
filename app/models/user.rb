@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  has_many :events
   has_and_belongs_to_many :events
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i

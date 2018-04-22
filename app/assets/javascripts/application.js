@@ -24,11 +24,11 @@
 $(function () {
     $('#datetimepicker').datetimepicker({
         viewMode: 'years',
-        format: 'DD.MM.YYYY'
+        format: 'DD-MM-YYYY HH:MM'
     });
 
     $('#datetimepicker2').datetimepicker({
         viewMode: 'years',
-        format: 'DD.MM.YYYY'
+        format: 'DD-MM-YYYY HH:MM'
     });
 });

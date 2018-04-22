@@ -1,21 +1,31 @@
 class EventsController < ApplicationController
-  before_action :admin_user,     only: :create
+  before_action :require_admin_user,  only: :create
 
   def new
     @event = Event.new
   end
 
-  def create
-
+  def show
+    @event = Event.find(params[:id])
   end
+
+  def create
+    @event = Event.new(event_params)
+    @user = @event.build_user(id: session[:user_id])
+    if @event.save
+      flash[:success] = "Event created"
+      redirect_to edit_user_path(current_user)
+    else
+      render 'new'
+    end
+  end
+
+
 
   private
 
     def event_params
-      params.require(:events).permit(:name, :location, :start)
-    end
-
-    def admin_user
-      redirect_to root_url  unless current_user.admin?
+      params.require(:event).permit(:name, :location,
+                                    :start, :end, :link)
     end
 end

@@ -6,6 +6,10 @@
         <%= @user.name %>
         <%= @user.email %>
         <%= Time.now %>
+        <% if current_user.admin? && !@user.admin? %>
+          <%= link_to "Give admin privileges", make_admin_user_path(@user),
+                      class: 'btn btn-danger', method: :patch %>
+        <% end %>
       </h1>
     </section>
   </aside>

@@ -1,7 +1,11 @@
 <% provide(:title, 'Members') %>
 <h1>All members</h1>
 
-<div class="container-fluid">
+<% if current_user.admin? %>
+  <div class="container-fluid">
+<% else %>
+  <div class="container">
+<% end %>
   <div class="col-md-6 col-md-offset-3">
     <%= will_paginate class: 'center', inner_window: 2, outer_window: 0 %>
 

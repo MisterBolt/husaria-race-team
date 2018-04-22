@@ -1,4 +1,5 @@
 module SessionsHelper
+
   def log_in(user)
     session[:user_id] = user.id
   end
@@ -48,5 +49,22 @@ module SessionsHelper
 
   def store_location
     session[:forwarding_url] = request.original_url if request.get?
+  end
+
+  ########### Before actions ################
+
+  def require_login
+    unless logged_in?
+      store_location
+      flash[:danger] = "Please log in."
+      redirect_to login_url
+    end
+  end
+
+  def require_admin_user
+    unless current_user.admin?
+      flash[:danger] = "You have to log in as admin."
+      redirect_to root_url
+    end
   end
 end
