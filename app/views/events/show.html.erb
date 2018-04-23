@@ -1,0 +1,16 @@
+<% provide(:title, 'Event') %>
+<div class="row">
+  <aside class="col-md-6">
+    <section class="user_info">
+      <h1>
+        <%= @event.name %>
+        <%= @event.location %>
+        <% if @event.users.include?(current_user) %>
+        <% else %>
+          <%= link_to "Going", assign_user_to_event_path(@event),
+                      class: 'btn btn-danger', method: :patch %>
+        <% end %>
+      </h1>
+    </section>
+  </aside>
+</div>

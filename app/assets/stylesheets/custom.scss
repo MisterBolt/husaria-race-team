@@ -2,7 +2,7 @@ $custom-red-color: #c9302c;
 
 $btn-primary-bg: black;
 
-/* pagination*/
+/************************** pagination *************************/
 $pagination-color: $custom-red-color;
 $pagination-bg: black;
 $pagination-border: $custom-red-color;
@@ -43,7 +43,7 @@ textarea {
 
 
 
-/* typography */
+/*************************** typography **************************/
 
 h1, h2, h3, h4, h5, h6 {
   line-height: 1;
@@ -71,7 +71,7 @@ p {
 }
 
 
-/* header */
+/**************************** header ****************************/
 
 .my-navbar {
   background-color: black;
@@ -87,8 +87,16 @@ p {
   }
 }
 
+.dropdown-menu {
+  li {
+    a {
+      color: $custom-red-color;
+    }
+  }
+}
 
-/* footer */
+
+/****************************** footer **************************/
 
 footer {
   margin-top: 45px;
@@ -121,7 +129,7 @@ footer {
 
 
 
-/* forms */
+/**************************** forms *****************************/
 
 .btn-danger {
   background-color: $custom-red-color;
@@ -181,7 +189,7 @@ input {
 
 
 
-/* users table */
+/**************************** users table **********************/
 
 .users {
   border-collapse: collapse;
@@ -242,4 +250,12 @@ input {
   }
 }
 
+/**************************** events **********************/
 
+.event-jumbotron {
+  color: black;
+  &:hover {
+    background-color: $custom-red-color;
+    text-decoration: none;
+  }
+}

@@ -1,0 +1,12 @@
+<% provide(:title, 'Events') %>
+<h1>Events</h1>
+
+<div class="container">
+  <div class="row">
+    <%= will_paginate class: 'center', inner_window: 2, outer_window: 0 %>
+    
+    <%= render @events %>
+
+    <%= will_paginate class: 'center', inner_window: 2, outer_window: 0 %>
+  </div>
+</div>

@@ -1,0 +1,9 @@
+<div class="col-md-6">
+  <a href="<%= event_path(event) %>" class="event-jumbotron">
+    <div class="jumbotron event-jumbotron">
+      <p>Title: <%= event.name %></p>
+      <p>Location: <%= event.location %></p>
+      <p>Date: <%= event.start.strftime("%F at %k:%M") %>
+    </div>
+  </a>
+</div>

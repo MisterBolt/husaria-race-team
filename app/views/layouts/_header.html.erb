@@ -13,14 +13,37 @@
     </div>
     <div class="collapse navbar-collapse" id="navbarCollapse">
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "HUSARZ.PL",   'http://husarz.pl/' %></li>
         <% if logged_in? %>
-          <li><%= link_to "MEMBERS", users_path %></li>
-          <li><%= link_to "SETTINGS", edit_user_path(current_user) %></li>
-          <li><%= link_to "LOG OUT", logout_path, method: :delete %></li>
+          <li><%= link_to "Profile", edit_user_path(current_user) %></li>
+          <% if current_user.admin? %>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink1"
+                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Events
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink1">
+                <li><%= link_to "Show", events_path, class: 'dropdown-item' %></li>
+                <li><%= link_to "Add new", new_event_path, class: 'dropdown-item' %></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink2"
+                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Members
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink2">
+                <li><%= link_to "Show", users_path, class: 'dropdown-item' %></li>
+                <li><%= link_to "Add new", signup_path, class: 'dropdown-item' %></li>
+              </ul>
+            </li>
+          <% else %>
+            <li><%= link_to "Events", events_path %></li>
+            <li><%= link_to "Members", users_path, class: 'dropdown-item' %></li>
+          <% end %>
+          <li><%= link_to "Log out", logout_path, method: :delete %></li>
         <% else %>
-          <li><%= link_to "SIGN UP", signup_path %></li>
-          <li><%= link_to "LOG IN", login_path %></li>
+          <li><%= link_to "Sklep", 'http://husarz.pl/' %></li>
+          <li><%= link_to "Log In", login_path %></li>
         <% end %>
       </ul>
     </div>

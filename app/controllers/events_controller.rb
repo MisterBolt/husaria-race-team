@@ -1,8 +1,13 @@
 class EventsController < ApplicationController
-  before_action :require_admin_user,  only: :create
+  before_action :require_admin_user,  only: [:new, :create]
 
   def new
     @event = Event.new
+  end
+
+  def index
+    @events = Event.where('start >= ?', Date.today).order(:start)
+                  .paginate(page: params[:page], per_page: 10)
   end
 
   def show
@@ -20,7 +25,11 @@ class EventsController < ApplicationController
     end
   end
 
-
+  def assign_user_to
+    @event = Event.find(params[:id])
+    @event.users << current_user unless @event.users.include?(current_user)
+    redirect_to event_path(@event)
+  end
 
   private
 

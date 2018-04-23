@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
   root 'sessions#new'
 
-  resources :events
+  resources :events do
+    member do
+      patch 'assign_user_to'
+    end
+  end
+
   resources :users do
     member do
       patch 'make_admin'

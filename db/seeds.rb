@@ -24,3 +24,18 @@ User.create!(name:  "Example",
                password:              password,
                password_confirmation: password)
 end
+
+200.times do |n|
+  name = Faker::FunnyName.name
+  location = "Warsaw"
+  start = Date.today.plus_with_duration(n)
+  ends = start.plus_with_duration(1)
+  link = "https://www.google.com/"
+  user_id = 1
+  Event.create!(name: name,
+                location: location,
+                start: start,
+                end: ends,
+                link: link,
+                user_id: user_id)
+end
