@@ -8,7 +8,7 @@
 User.create!(name:  "Example",
              surname:  "User",
              email: "example@example.pl",
-             sex: "M",
+             sex: "Male",
              password:              "password",
              password_confirmation: "password",
              admin: true)
@@ -20,7 +20,7 @@ User.create!(name:  "Example",
   User.create!(name:  name,
                surname: name,
                email: email,
-               sex: "M",
+               sex: "Male",
                password:              password,
                password_confirmation: password)
 end

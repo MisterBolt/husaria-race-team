@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :events do
     member do
       patch 'assign_user_to'
+      patch 'delete_user_from'
     end
   end
 

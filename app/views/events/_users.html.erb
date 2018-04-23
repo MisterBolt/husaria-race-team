@@ -1,0 +1,9 @@
+<% @users.each do |user| %>
+  <div class="col-sm-6 col-md-6">
+    <a href="<%= user_path(user) %>" class="event-jumbotron">
+      <div class="jumbotron event-jumbotron">
+        <p><%= user.name + " " + user.surname %></p>
+      </div>
+    </a>
+  </div>
+<% end %>

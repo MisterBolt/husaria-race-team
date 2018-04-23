@@ -12,6 +12,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @events = @user.events.order(:start).paginate(page: params[:page], per_page: 10)
   end
 
   def create
@@ -32,7 +33,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     if @user.update_attributes(user_params)
       flash[:success] = "Profile updated"
-      redirect_to edit_user_path(@user)
+      redirect_to user_path(@user)
     else
       render 'edit'
     end

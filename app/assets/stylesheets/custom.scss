@@ -253,9 +253,20 @@ input {
 /**************************** events **********************/
 
 .event-jumbotron {
+  padding-top: 0px;
+  padding-bottom:0px;
   color: black;
+
+  p{.btn-delete {
+    align-content: right;
+  }}
+
   &:hover {
     background-color: $custom-red-color;
     text-decoration: none;
   }
+}
+
+.disabled {
+  background-color: black;
 }

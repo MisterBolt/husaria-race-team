@@ -1,16 +1,31 @@
 <% provide(:title, 'Profile') %>
-<div class="row">
-  <aside class="col-md-6">
-    <section class="user_info">
-      <h1>
-        <%= @user.name %>
-        <%= @user.email %>
-        <%= Time.now %>
-        <% if current_user.admin? && !@user.admin? %>
-          <%= link_to "Give admin privileges", make_admin_user_path(@user),
-                      class: 'btn btn-danger', method: :patch %>
-        <% end %>
-      </h1>
-    </section>
-  </aside>
+
+<div class="container-fluid">
+  <div class="col-md-4">
+    <%= form_for(@user, url: edit_user_path(@user), html: { method: 'GET' }) do |f| %>
+
+      <%= f.label :name %>
+      <%= f.text_field :name, class: 'form-control', readonly: true %>
+
+      <%= f.label :surname %>
+      <%= f.text_field :surname, class: 'form-control', readonly: true %>
+
+      <% if current_user?(@user) %>
+        <%= f.label :email %>
+        <%= f.email_field :email, class: 'form-control', readonly: true %>
+
+        <%= f.label :sex %>
+        <%= f.text_field :sex, class: 'form-control', readonly: true %>
+
+        <%= f.submit "Edit user", class: 'btn btn-danger' %>
+      <% end %>
+    <% end %>
+  </div>
+
+  <div class="col-md-8">
+    <h1>List of attending events(<%= @events.count %>):</h1>
+    <%= will_paginate @events, class: 'center', inner_window: 2, outer_window: 0 %>
+
+    <%= render 'events' %>
+  </div>
 </div>
