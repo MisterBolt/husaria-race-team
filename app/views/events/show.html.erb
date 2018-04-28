@@ -1,7 +1,7 @@
 <% provide(:title, 'Event') %>
 
 <div class="container-fluid">
-  <div class="col-md-4">
+  <div class="col-md-4 ">
     <div class="center">
       <% if @event.users.include?(current_user) %>
         <%= link_to "Not going", delete_user_from_event_path(@event),

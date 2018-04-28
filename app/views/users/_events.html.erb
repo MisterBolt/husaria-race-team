@@ -3,6 +3,7 @@
     <a href="<%= event_path(event) %>" class="event-jumbotron">
       <div class="jumbotron event-jumbotron">
         <p><%= event.name %></p>
+        <p><%= event.start.strftime("%F at %k:%M") %></p>
       </div>
     </a>
   </div>
