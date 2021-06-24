@@ -1,0 +1,51 @@
+<% provide(:title, 'Event') %>
+
+<div class="container-fluid">
+  <div class="col-md-4">
+    <div class="center">
+      <% if @event.users.include?(current_user) %>
+        <%= link_to "Not going", delete_user_from_event_path(@event),
+                    class: 'btn btn-danger', method: :patch %>
+        <%= link_to "Going", assign_user_to_event_path(@event),
+                    class: 'btn btn-danger disabled', method: :patch %>
+      <% else %>
+        <%= link_to "Not going", delete_user_from_event_path(@event),
+                    class: 'btn btn-danger disabled', method: :patch %>
+        <%= link_to "Going", assign_user_to_event_path(@event),
+                    class: 'btn btn-danger', method: :patch %>
+      <% end %>
+    </div>
+
+    <%= form_for(@event, url: edit_event_path(@event), html: { method: 'GET' }) do |f| %>
+
+      <%= f.label :name, "Title" %>
+      <%= f.text_field :name, class: 'form-control', readonly: true %>
+
+      <%= f.label :location %>
+      <%= f.text_field :location, class: 'form-control', readonly: true %>
+
+      <%= f.label :start, "Start time"%>
+      <%= f.text_field :start, class: 'form-control', readonly: true %>
+
+      <%= f.label :end, "End time"%>
+      <%= f.text_field :end, class: 'form-control', readonly: true %>
+
+
+      <%= f.label :link %>
+      <a href="<%= @event.link %>">
+        <%= f.text_field :link, class: 'form-control', readonly: true %>
+      </a>
+
+      <% if current_user.admin? %>
+        <%= f.submit "Edit event", class: 'btn btn-danger' %>
+      <% end %>
+    <% end %>
+  </div>
+
+  <div class="col-md-8">
+    <h1>List of participants(<%= @users.count %>):</h1>
+    <%= will_paginate @users, class: 'center', inner_window: 2, outer_window: 0 %>
+
+    <%= render 'users' %>
+  </div>
+</div>

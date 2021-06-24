@@ -1,0 +1,41 @@
+<% provide(:title, "New event") %>
+<h1>New event</h1>
+
+<div class="container">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@event) do |f| %>
+      <%= render 'error_messages' %>
+
+      <%= f.label :name, "Title" %>
+      <%= f.text_field :name, class: 'form-control' %>
+
+      <%= f.label :location %>
+      <%= f.text_field :location, class: 'form-control' %>
+
+      <%= f.label :start, "Start time"%>
+      <div class="form-group">
+        <div class="input-group date">
+          <%= f.text_field :start, class: 'form-control', id: 'datetimepicker'%>
+          <span class="input-group-addon">
+            <span class="glyphicon glyphicon-calendar"></span>
+          </span>
+        </div>
+      </div>
+
+      <%= f.label :end, "End time"%>
+      <div class="form-group">
+        <div class="input-group date">
+          <%= f.text_field :end, class: 'form-control', id: 'datetimepicker2'%>
+          <span class="input-group-addon">
+            <span class="glyphicon glyphicon-calendar"></span>
+          </span>
+        </div>
+      </div>
+
+      <%= f.label :link %>
+      <%= f.text_field :link, class: 'form-control' %>
+
+      <%= f.submit "Create event", class: 'btn btn-danger' %>
+    <% end %>
+  </div>
+</div>

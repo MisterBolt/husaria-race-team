@@ -2,7 +2,7 @@ $custom-red-color: #c9302c;
 
 $btn-primary-bg: black;
 
-/* pagination*/
+/************************** pagination *************************/
 $pagination-color: $custom-red-color;
 $pagination-bg: black;
 $pagination-border: $custom-red-color;
@@ -18,6 +18,8 @@ $pagination-hover-border: $custom-red-color;
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import 'bootstrap-datetimepicker';
+@import "bootstrap3-switch";
 
 body {
   padding-top: 80px;
@@ -41,7 +43,7 @@ textarea {
 
 
 
-/* typography */
+/*************************** typography **************************/
 
 h1, h2, h3, h4, h5, h6 {
   line-height: 1;
@@ -69,19 +71,32 @@ p {
 }
 
 
-/* header */
+/**************************** header ****************************/
 
-header {
+.my-navbar {
   background-color: black;
 
   a {
     color: white;
     font-size: 1.3em;
+
+    &:hover {
+      background-color: white;
+      color: black;
+    }
+  }
+}
+
+.dropdown-menu {
+  li {
+    a {
+      color: $custom-red-color;
+    }
   }
 }
 
 
-/* footer */
+/****************************** footer **************************/
 
 footer {
   margin-top: 45px;
@@ -114,7 +129,7 @@ footer {
 
 
 
-/* forms */
+/**************************** forms *****************************/
 
 .btn-danger {
   background-color: $custom-red-color;
@@ -174,9 +189,9 @@ input {
 
 
 
-/* tables */
+/**************************** users table **********************/
 
-table {
+.users {
   border-collapse: collapse;
   width: 100%;
   color: white;
@@ -192,38 +207,66 @@ table {
         width: 100%;
       }
 
-      &:hover {
-        background-color: $custom-red-color;
+      &:nth-child(even) {
+        background-color: white;
         color: black;
+
+        &:hover {
+          background-color: $custom-red-color;
+
+          a {
+            color: black;
+          }
+        }
 
         a {
           color: black;
+
+          &:hover {
+            color: white;
+          }
+        }
+      }
+
+
+      &:nth-child(odd) {
+        &:hover {
+          background-color: $custom-red-color;
+
+          a {
+            color: black;
+          }
+        }
+
+        a {
+          color: white;
+
+          &:hover {
+            color: white;
+          }
         }
       }
     }
   }
 }
 
-tr:nth-child(even) {
-  background-color: white;
+/**************************** events **********************/
+
+.event-jumbotron {
+  padding-top: 0px;
+  padding-bottom:0px;
   color: black;
 
-  a {
-    color: black;
+  p{.btn-delete {
+    align-content: right;
+  }}
 
-    &:hover {
-      color: white;
-    }
+  &:hover {
+    background-color: $custom-red-color;
+    text-decoration: none;
   }
 }
 
-tr:nth-child(odd) {
-  a {
-    color: white;
-
-    &:hover {
-      text-decoration: none;
-      color: white;
-    }
-  }
+.disabled {
+  background-color: black;
 }

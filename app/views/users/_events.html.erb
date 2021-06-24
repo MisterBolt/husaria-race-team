@@ -1,0 +1,9 @@
+<% @events.each do |event| %>
+  <div class="col-sm-6 col-md-6">
+    <a href="<%= event_path(event) %>" class="event-jumbotron">
+      <div class="jumbotron event-jumbotron">
+        <p><%= event.name %></p>
+      </div>
+    </a>
+  </div>
+<% end %>
