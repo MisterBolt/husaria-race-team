@@ -1,4 +1,4 @@
-Site address for view: https://rocky-depths-11193.herokuapp.com
+Site address for view: https://husariaraceteam.herokuapp.com/
 
 Admin profile: example@example.pl
 
